@@ -9,7 +9,7 @@ class RosterService {
         .then(rosters => {
             rosters.forEach(roster => {
                 const r = new Roster(roster)
-                r.appendToDom()
+                r.appendRosterHTML()
             })
         })
     }

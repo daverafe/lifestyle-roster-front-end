@@ -7,15 +7,14 @@ class Roster {
         Roster.all.push(this)
     }
 
-    rosterHTML() {
+    appendRosterHTML() {
         Roster.rostersContainer.innerHTML += `
             <div>
                 <h2>${this.title.title}</h2>
             </div>
         `
+        return Roster.rostersContainer
     }
 
-    appendToDom() {
-        Roster.rostersContainer.append(this.rosterHTML())
-    }
+    
 }

@@ -1,6 +1,7 @@
 class Roster {
     static all = []
     static rostersContainer = document.getElementById('rosters-container')
+    static rosterForm = document.getElementById('form-container')
 
     constructor(title) {
         this.title = title 
@@ -16,5 +17,14 @@ class Roster {
         return Roster.rostersContainer
     }
 
+    static renderForm(){
+        Roster.rosterForm.innerHTML += `
+        <form id="new-roster-form">
+            <h4>Start A New Roster:</h4>
+            <input type="text" id="title" placeholder="title">
+            <input type="submit" value="create">
+        </form>
+        `
+    }
     
 }

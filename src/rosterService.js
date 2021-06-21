@@ -13,4 +13,25 @@ class RosterService {
             })
         })
     }
+
+    createRoster(){
+        const roster = {
+            title: event.target.title.value
+        }
+
+        const configObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(roster)
+        }
+
+        fetch(`${this.endpoint}/rosters`, configObj)
+        .then(resp => resp.json())
+        .then(roster => {
+            const r = new Roster(roster)
+            r.appendRosterHTML()
+        })
+    }
 }

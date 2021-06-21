@@ -34,4 +34,15 @@ class RosterService {
             r.appendRosterHTML()
         })
     }
+
+    deleteRoster(id){
+        fetch(`${this.endpoint}/rosters/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(json => alert(json.message))
+    }
 }

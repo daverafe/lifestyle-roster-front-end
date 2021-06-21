@@ -10,8 +10,9 @@ class Roster {
 
     appendRosterHTML() {
         Roster.rostersContainer.innerHTML += `
-            <div>
+            <div id="${this.title.id}">
                 <h2>${this.title.title}</h2>
+                <button>Delete</button>
             </div>
         `
         return Roster.rostersContainer
@@ -26,5 +27,6 @@ class Roster {
         </form>
         `
     }
-    
+
+
 }

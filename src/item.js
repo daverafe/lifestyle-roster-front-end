@@ -14,6 +14,18 @@ class Item {
     }
 
     //build the item HTML
+    appendItemHTML(){
+        Item.itemsContainer.innerHTML += `
+        <div id="${this.name.id}">
+            <h4>${this.name.name}</h4>
+            <img src="${this.name.image}">
+            <p>$${this.name.price}</p>
+            <a href="${this.name.url}">${this.name.name}</a>
+            <button>Mark Bought</button>
+        </div>
+        `
+        return Item.itemsContainer
+    }
 
 
     //append item to dom

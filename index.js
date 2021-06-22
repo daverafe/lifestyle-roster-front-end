@@ -24,6 +24,7 @@ function handleRosterDelete(){
 
 function handleItems(roster){
     if(event.target.id === "roster-title"){
+        this.remove()
         roster = event.target.parentElement
         itemService.getItems(roster)
     }

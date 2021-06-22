@@ -7,19 +7,18 @@ class ItemService {
         fetch(`${this.endpoint}/items`)
         .then(resp => resp.json())
         .then(items => {
-            items.forEach(item => {
-                const i = new Item(item)
-                i.appendItemHTML()
+           const itemOjb = items.map(item => {
+               return new Item(item)
             })
-            //append item to dom 
-        })
+            const filteredItems = Item.all.filter(item => {
+               return item.name.roster_id === parseInt(roster.id) 
+            }) 
+            filteredItems.forEach(item => {
+                item.appendItemHTML()
+            })       
+         })
     }
 
 }
 
-// const filteredItems = items.filter(item => {
-//     if(item.roster_id === roster.id){
-//         return item 
-//     }  
-// })
-// console.log(filteredItems)
+

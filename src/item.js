@@ -13,7 +13,6 @@ class Item {
         Item.all.push(this) 
     }
 
-    //build the item HTML
     appendItemHTML(){
         Item.itemsContainer.innerHTML += `
         <div id="${this.name.id}">
@@ -27,8 +26,18 @@ class Item {
         return Item.itemsContainer
     }
 
-
-    //append item to dom
+    static renderForm(){
+        Item.itemForm.innerHTML += `
+        <form id="new-item-form">
+            <h4>Add A New Item:</h4>
+            <input type="text" id="name" placeholder="name">
+            <input type="text" id="image" placeholder="image address">
+            <input type="number" id="price" placeholder="price">
+            <input type="text" id="url" placeholder="page url">
+            <input type="submit" value="create">
+        </form>
+        `
+    }
 
 
 }

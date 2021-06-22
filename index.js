@@ -26,6 +26,7 @@ function handleItems(roster){
     if(event.target.id === "roster-title"){
         this.innerHTML = ""
         Roster.rosterForm.innerHTML = ""
+        Item.renderForm()
         roster = event.target.parentElement
         itemService.getItems(roster)
     }

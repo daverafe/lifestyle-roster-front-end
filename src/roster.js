@@ -11,7 +11,7 @@ class Roster {
     appendRosterHTML() {
         Roster.rostersContainer.innerHTML += `
             <div id="${this.title.id}">
-                <h2>${this.title.title}</h2>
+                <h2 id="roster-title">${this.title.title}</h2>
                 <button>Delete</button>
             </div>
         `

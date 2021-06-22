@@ -13,5 +13,10 @@ class Item {
         Item.all.push(this) 
     }
 
+    //build the item HTML
+
+
+    //append item to dom
+
 
 }

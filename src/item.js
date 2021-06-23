@@ -16,6 +16,7 @@ class Item {
     appendItemHTML(){
         Item.itemsContainer.innerHTML += `
         <div id="${this.name.id}">
+            <input type="hidden" id="${this.name.roster_id}">
             <h4>${this.name.name}</h4>
             <img src="${this.name.image}">
             <p>$${this.name.price}</p>

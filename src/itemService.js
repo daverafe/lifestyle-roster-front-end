@@ -19,6 +19,31 @@ class ItemService {
          })
     }
 
+    createItem(item){
+        const itemObj = {
+            name: event.target.name.value,
+            image: event.target.image.value,
+            price: event.target.price.value,
+            url: event.target.url.value,
+            roster_id: item.firstElementChild.id 
+        }
+
+        const configObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(itemObj)
+        }
+
+        fetch(`${this.endpoint}/items`, configObj)
+        .then(resp => resp.json())
+        .then(item => {
+            const i = new Item(item)
+            i.appendItemHTML()
+        })
+    }
+
 }
 
 

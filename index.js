@@ -6,6 +6,8 @@ Roster.rosterForm.addEventListener('submit', handleRosterSubmit)
 Roster.rostersContainer.addEventListener('click', handleRosterDelete)
 Roster.rostersContainer.addEventListener('click', handleItems)
 
+Item.itemForm.addEventListener('submit', handleItemSubmit)
+
 rosterService.getRosters()
 Roster.renderForm()
 
@@ -30,4 +32,11 @@ function handleItems(roster){
         roster = event.target.parentElement
         itemService.getItems(roster)
     }
+}
+
+function handleItemSubmit(item) {
+    event.preventDefault()
+    item = this.previousElementSibling.firstElementChild
+    itemService.createItem(item)
+    event.target.reset()
 }

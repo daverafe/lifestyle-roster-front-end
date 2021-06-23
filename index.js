@@ -36,10 +36,10 @@ function handleItems(roster){
     }
 }
 
-function handleItemSubmit(item) {
+function handleItemSubmit(event) {
     event.preventDefault()
-    item = this.previousElementSibling.firstElementChild
-    itemService.createItem(item)
+    // let item = this.previousElementSibling.firstElementChild
+    itemService.createItem()
     event.target.reset()
 }
 
@@ -54,5 +54,8 @@ function handleItemBought(){
     if(event.target.innerText === "Mark Bought"){
         itemService.itemBought(event.target.parentElement.id)
         event.target.innerText = "Bought"
-    } 
+    } else if(event.target.innerText === "Bought"){
+        itemService.itemUnbought(event.target.parentElement.id)
+        event.target.innerText = "Mark Bought"
+    }
 }

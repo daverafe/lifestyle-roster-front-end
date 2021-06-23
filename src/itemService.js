@@ -19,13 +19,14 @@ class ItemService {
          })
     }
 
-    createItem(item){
+    createItem(){
+        debugger;
         const itemObj = {
             name: event.target.name.value,
             image: event.target.image.value,
             price: event.target.price.value,
             url: event.target.url.value,
-            roster_id: item.firstElementChild.id 
+            // roster_id: item.firstElementChild.id 
         }
 
         const configObj = {
@@ -74,6 +75,24 @@ class ItemService {
           .then(alert("Item Bought"))
     }
 
+    itemUnbought(id){
+        const markBought = {
+            bought: false 
+        }
+
+        const patchObj = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(markBought)
+          }
+
+          fetch(`${this.endpoint}/items/${id}`, patchObj)
+          .then(resp => resp.json())
+          .then(alert("Item Not Bought"))
+    }
    
 
 }

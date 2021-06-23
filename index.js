@@ -7,6 +7,7 @@ Roster.rostersContainer.addEventListener('click', handleRosterDelete)
 Roster.rostersContainer.addEventListener('click', handleItems)
 
 Item.itemForm.addEventListener('submit', handleItemSubmit)
+Item.itemsContainer.addEventListener('click', handleItemDelete)
 
 rosterService.getRosters()
 Roster.renderForm()
@@ -39,4 +40,11 @@ function handleItemSubmit(item) {
     item = this.previousElementSibling.firstElementChild
     itemService.createItem(item)
     event.target.reset()
+}
+
+function handleItemDelete(){
+    if(event.target.innerText === "Remove Item"){
+        event.target.parentElement.remove()
+        itemService.deleteItem(event.target.parentElement.id)
+    }
 }

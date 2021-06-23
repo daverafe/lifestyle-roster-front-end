@@ -44,6 +44,17 @@ class ItemService {
         })
     }
 
+    deleteItem(id){
+        fetch(`${this.endpoint}/items/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(json => alert(json.message))
+    }
+
 }
 
 

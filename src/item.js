@@ -22,6 +22,7 @@ class Item {
             <p>$${this.name.price}</p>
             <a href="${this.name.url}">${this.name.name}</a>
             <button>Mark Bought</button>
+            <button>Remove Item</button>
         </div>
         `
         return Item.itemsContainer

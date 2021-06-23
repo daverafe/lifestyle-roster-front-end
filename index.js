@@ -8,6 +8,7 @@ Roster.rostersContainer.addEventListener('click', handleItems)
 
 Item.itemForm.addEventListener('submit', handleItemSubmit)
 Item.itemsContainer.addEventListener('click', handleItemDelete)
+Item.itemsContainer.addEventListener('click', handleItemBought)
 
 rosterService.getRosters()
 Roster.renderForm()
@@ -47,4 +48,11 @@ function handleItemDelete(){
         event.target.parentElement.remove()
         itemService.deleteItem(event.target.parentElement.id)
     }
+}
+
+function handleItemBought(){
+    if(event.target.innerText === "Mark Bought"){
+        itemService.itemBought(event.target.parentElement.id)
+        event.target.innerText = "Bought"
+    } 
 }

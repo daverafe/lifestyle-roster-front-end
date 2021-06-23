@@ -55,6 +55,27 @@ class ItemService {
         .then(json => alert(json.message))
     }
 
+    itemBought(id){
+        const markBought = {
+            bought: true 
+        }
+
+        const patchObj = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(markBought)
+          }
+
+          fetch(`${this.endpoint}/items/${id}`, patchObj)
+          .then(resp => resp.json())
+          .then(alert("Item Bought"))
+    }
+
+   
+
 }
 
 

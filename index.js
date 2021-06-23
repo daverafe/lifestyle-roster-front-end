@@ -14,9 +14,11 @@ rosterService.getRosters()
 Roster.renderForm()
 
 function handleRosterSubmit(){
-    event.preventDefault()
-    rosterService.createRoster()
-    event.target.reset() 
+    if (event.target.id === "new-roster-form"){
+        event.preventDefault()
+        rosterService.createRoster()
+        event.target.reset() 
+    }
 }
 
 function handleRosterDelete(){
@@ -26,20 +28,20 @@ function handleRosterDelete(){
     }
 }
 
-function handleItems(roster){
+function handleItems(){
     if(event.target.id === "roster-title"){
         this.innerHTML = ""
         Roster.rosterForm.innerHTML = ""
         Item.renderForm()
-        roster = event.target.parentElement
+        let roster = event.target.parentElement.id
         itemService.getItems(roster)
     }
 }
 
-function handleItemSubmit(event) {
+function handleItemSubmit() {
     event.preventDefault()
-    // let item = this.previousElementSibling.firstElementChild
-    itemService.createItem()
+    let item = this.previousElementSibling.firstElementChild
+    itemService.createItem(item)
     event.target.reset()
 }
 

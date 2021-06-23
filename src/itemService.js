@@ -3,7 +3,7 @@ class ItemService {
         this.endpoint = endpoint
     }
 
-    getItems(roster){
+    getItems(rosterId){
         fetch(`${this.endpoint}/items`)
         .then(resp => resp.json())
         .then(items => {
@@ -11,7 +11,7 @@ class ItemService {
                return new Item(item)
             })
             const filteredItems = Item.all.filter(item => {
-               return item.name.roster_id === parseInt(roster.id) 
+               return item.name.roster_id === parseInt(rosterId) 
             }) 
             filteredItems.forEach(item => {
                 item.appendItemHTML()
@@ -19,14 +19,13 @@ class ItemService {
          })
     }
 
-    createItem(){
-        debugger;
+    createItem(item){
         const itemObj = {
-            name: event.target.name.value,
-            image: event.target.image.value,
-            price: event.target.price.value,
-            url: event.target.url.value,
-            // roster_id: item.firstElementChild.id 
+            name: document.getElementById('name').value,
+            image: document.getElementById('image').value,
+            price: document.getElementById('price').value,
+            url: document.getElementById('url').value,
+            roster_id: item.firstElementChild.id 
         }
 
         const configObj = {

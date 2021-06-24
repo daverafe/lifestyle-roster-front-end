@@ -15,15 +15,21 @@ class Item {
 
     appendItemHTML(){
         Item.itemsContainer.innerHTML += `
-        <div id="${this.name.id}">
-            <input type="hidden" id="${this.name.roster_id}">
-            <h4>${this.name.name}</h4>
-            <img src="${this.name.image}">
-            <p>$${this.name.price}</p>
-            <a href="${this.name.url}">${this.name.name}</a>
-            ${this.name.bought === false ? `<button>Mark Bought</button>` : `<button>Bought</button>`} 
-            <button>Remove Item</button>
-        </div>
+            <div class="col-sm">
+                 <div class="card" id="${this.name.id}">
+                    <input type="hidden" id="${this.name.roster_id}">
+                    <img src="${this.name.image}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${this.name.name}</h5>
+                            <p class="card-text">
+                            $${this.name.price}
+                            <a href="${this.name.url}">${this.name.name}</a>
+                            </p>
+                            ${this.name.bought === false ? `<button type="button" class="btn btn-primary">Mark Bought</button>` : `<button type="button" class="btn btn-primary">Bought</button>`} 
+                            <buttontype="button" class="btn btn-danger">Remove Item</button>
+                        </div>
+                </div>
+            </div>
         `
         return Item.itemsContainer
     }

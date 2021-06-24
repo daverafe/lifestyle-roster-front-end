@@ -47,17 +47,17 @@ function handleItemSubmit() {
 
 function handleItemDelete(){
     if(event.target.innerText === "Remove Item"){
-        event.target.parentElement.remove()
-        itemService.deleteItem(event.target.parentElement.id)
+        event.target.parentElement.parentElement.remove()
+        itemService.deleteItem(event.target.parentElement.parentElement.id)
     }
 }
 
 function handleItemBought(){
     if(event.target.innerText === "Mark Bought"){
-        itemService.itemBought(event.target.parentElement.id)
+        itemService.itemBought(event.target.parentElement.parentElement.id)
         event.target.innerText = "Bought"
     } else if(event.target.innerText === "Bought"){
-        itemService.itemUnbought(event.target.parentElement.id)
+        itemService.itemUnbought(event.target.parentElement.parentElement.id)
         event.target.innerText = "Mark Bought"
     }
 }

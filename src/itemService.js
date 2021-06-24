@@ -71,7 +71,7 @@ class ItemService {
 
           fetch(`${this.endpoint}/items/${id}`, patchObj)
           .then(resp => resp.json())
-          .then(alert("Item Bought"))
+          .then()
     }
 
     itemUnbought(id){
@@ -90,7 +90,7 @@ class ItemService {
 
           fetch(`${this.endpoint}/items/${id}`, patchObj)
           .then(resp => resp.json())
-          .then(alert("Item Not Bought"))
+          .then()
     }
    
 

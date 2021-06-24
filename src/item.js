@@ -22,10 +22,10 @@ class Item {
                         <div class="card-body">
                             <h5 class="card-title">${this.name.name}</h5>
                             <p class="card-text">
-                            $${this.name.price}
-                            <a href="${this.name.url}">${this.name.name}</a>
+                            $${this.name.price} <br>
+                            Buy it here: <a href="${this.name.url}">${this.name.name}</a>
                             </p>
-                            ${this.name.bought === false ? `<button type="button" class="btn btn-primary">Mark Bought</button>` : `<button type="button" class="btn btn-primary">Bought</button>`} 
+                            ${this.name.bought === false ? `<button type="button" class="btn btn-primary">Mark Bought</button>` : `<button type="button" class="btn btn-success">Bought</button>`} 
                             <buttontype="button" class="btn btn-danger">Remove Item</button>
                         </div>
                 </div>

@@ -21,7 +21,7 @@ class Item {
             <img src="${this.name.image}">
             <p>$${this.name.price}</p>
             <a href="${this.name.url}">${this.name.name}</a>
-            <button>Mark Bought</button>
+            ${this.name.bought === false ? `<button>Mark Bought</button>` : `<button>Bought</button>`} 
             <button>Remove Item</button>
         </div>
         `

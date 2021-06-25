@@ -3,7 +3,7 @@ class Item {
     static itemsContainer = document.getElementById('items-container')
     static itemForm = document.getElementById('form-container')
 
-    constructor(name, image, price, url, bought, roster_id){
+    constructor({name, image, price, url, bought, roster_id}){
         this.name = name 
         this.image = image
         this.price = price
@@ -16,16 +16,16 @@ class Item {
     appendItemHTML(){
         Item.itemsContainer.innerHTML += `
             <div class="col-sm">
-                 <div class="card" id="${this.name.id}">
-                    <input type="hidden" id="${this.name.roster_id}">
-                    <img src="${this.name.image}" class="card-img-top">
+                 <div class="card" id="${this.id}">
+                    <input type="hidden" id="${this.roster_id}">
+                    <img src="${this.image}" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">${this.name.name}</h5>
+                            <h5 class="card-title">${this.name}</h5>
                             <p class="card-text">
-                            $${this.name.price} <br>
-                            Buy it here: <a href="${this.name.url}">${this.name.name}</a>
+                            $${this.price} <br>
+                            Buy it here: <a href="${this.url}">${this.name}</a>
                             </p>
-                            ${this.name.bought === false ? `<button type="button" class="btn btn-primary">Mark Bought</button>` : `<button type="button" class="btn btn-success">Bought</button>`} 
+                            ${this.bought === false ? `<button type="button" class="btn btn-primary">Mark Bought</button>` : `<button type="button" class="btn btn-success">Bought</button>`} 
                             <buttontype="button" class="btn btn-danger">Remove Item</button>
                         </div>
                 </div>

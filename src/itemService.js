@@ -7,11 +7,11 @@ class ItemService {
         fetch(`${this.endpoint}/items`)
         .then(resp => resp.json())
         .then(items => {
-           const itemOjb = items.map(item => {
+            items.forEach(item => {
                return new Item(item)
             })
             const filteredItems = Item.all.filter(item => {
-               return item.name.roster_id === parseInt(rosterId) 
+               return item.roster_id === parseInt(rosterId) 
             }) 
             filteredItems.forEach(item => {
                 item.appendItemHTML()

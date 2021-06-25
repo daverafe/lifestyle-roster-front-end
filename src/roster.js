@@ -3,16 +3,17 @@ class Roster {
     static rostersContainer = document.getElementById('rosters-container')
     static rosterForm = document.getElementById('form-container')
 
-    constructor(title) {
+    constructor({id, title}) {
+        this.id = id 
         this.title = title 
         Roster.all.push(this)
     }
 
     appendRosterHTML() {
         Roster.rostersContainer.innerHTML += `
-            <div id="${this.title.id}">
-                <h2 id="roster-title">${this.title.title}</h2>
-                <button>Delete</button>
+            <div id="${this.id}" class="roster">
+                <h2 id="roster-title">${this.title}</h2>
+                <button type="button" class="btn btn-danger">Delete</button>
             </div>
         `
         return Roster.rostersContainer

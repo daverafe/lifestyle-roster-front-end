@@ -9,6 +9,7 @@ Roster.rostersContainer.addEventListener('click', handleItems)
 Item.itemForm.addEventListener('submit', handleItemSubmit)
 Item.itemsContainer.addEventListener('click', handleItemDelete)
 Item.itemsContainer.addEventListener('click', handleItemBought)
+Item.itemsContainer.addEventListener('click', handleBack)
 
 rosterService.getRosters()
 Roster.renderForm()
@@ -33,6 +34,7 @@ function handleItems(){
         this.innerHTML = ""
         Roster.rosterForm.innerHTML = ""
         Item.renderForm()
+        Item.backToRoster()
         let roster = event.target.parentElement.id
         itemService.getItems(roster)
     }
@@ -61,5 +63,14 @@ function handleItemBought(){
         itemService.itemUnbought(event.target.parentElement.parentElement.id)
         event.target.innerText = "Mark Bought"
         event.target.className = "btn btn-primary"
+    }
+}
+
+function handleBack() {
+    if(event.target.innerText === "Back To Rosters"){
+        this.innerHTML = ""
+        Item.itemForm.innerHTML = ""
+        rosterService.getRosters()
+        Roster.renderForm()
     }
 }

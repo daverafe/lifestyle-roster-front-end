@@ -47,5 +47,13 @@ class Item {
         `
     }
 
+    static backToRoster(){
+        Item.itemsContainer.innerHTML += `
+            <div>
+                <button type="button" class="btn btn-secondary" id="back-bttn">Back To Rosters</button> 
+            </div>
+        `
+    }
+
 
 }

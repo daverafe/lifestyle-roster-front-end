@@ -19,13 +19,13 @@ class ItemService {
          })
     }
 
-    createItem(item){
+    createItem(rosterId){
         const itemObj = {
             name: document.getElementById('name').value,
             image: document.getElementById('image').value,
             price: document.getElementById('price').value,
             url: document.getElementById('url').value,
-            roster_id: item.firstElementChild.id 
+            roster_id: rosterId 
         }
 
         const configObj = {

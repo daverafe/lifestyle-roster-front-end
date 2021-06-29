@@ -34,9 +34,9 @@ class Item {
         return Item.itemsContainer
     }
 
-    static renderForm(){
+    static renderForm(rosterId){
         Item.itemForm.innerHTML += `
-        <form id="new-item-form">
+        <form id="new-item-form" data-id="${rosterId}">
             <h4>Add A New Item:</h4>
             <input type="text" id="name" placeholder="name">
             <input type="text" id="image" placeholder="image address">

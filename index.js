@@ -33,17 +33,18 @@ function handleItems(){
     if(event.target.id === "roster-title"){
         this.innerHTML = ""
         Roster.rosterForm.innerHTML = ""
-        Item.renderForm()
-        Item.backToRoster()
         let roster = event.target.parentElement.id
+        Item.renderForm(roster)
+        Item.backToRoster()
         itemService.getItems(roster)
+        
     }
 }
 
 function handleItemSubmit() {
     event.preventDefault()
-    let item = this.previousElementSibling.firstElementChild.firstElementChild.firstElementChild
-    itemService.createItem(item)
+    let rosterId = event.target.dataset.id 
+    itemService.createItem(rosterId)
     event.target.reset()
 }
 
@@ -67,9 +68,11 @@ function handleItemBought(){
 }
 
 function handleBack() {
+    // debugger
     if(event.target.innerText === "Back To Rosters"){
         this.innerHTML = ""
         Item.itemForm.innerHTML = ""
+        Item.all = []
         rosterService.getRosters()
         Roster.renderForm()
     }

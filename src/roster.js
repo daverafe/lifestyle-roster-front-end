@@ -11,10 +11,14 @@ class Roster {
 
     appendRosterHTML() {
         Roster.rostersContainer.innerHTML += `
-            <div id="${this.id}" class="roster">
-                <h2 id="roster-title">${this.title}</h2>
-                <button type="button" class="btn btn-danger">Delete</button>
+        <div class="col-sm">
+            <div id="${this.id}" class="card">
+                <div class="card-body">
+                    <h2 id="roster-title">${this.title}</h2>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
             </div>
+        </div>
         `
         return Roster.rostersContainer
     }
@@ -24,7 +28,7 @@ class Roster {
         <form id="new-roster-form">
             <h4>Start A New Roster:</h4>
             <input type="text" id="title" placeholder="title">
-            <input type="submit" value="create">
+            <button type="submit" class="btn btn-primary">Create</button>        
         </form>
         `
     }

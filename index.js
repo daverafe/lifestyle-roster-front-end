@@ -45,7 +45,7 @@ function handleItems(){
     if(event.target.id === "roster-title"){
         this.innerHTML = ""
         Roster.rosterForm.innerHTML = ""
-        let roster = event.target.parentElement.id
+        let roster = event.target.parentElement.parentElement.id
         Item.renderForm(roster)
         Item.backToRoster()
         itemService.getItems(roster)

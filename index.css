@@ -2,11 +2,40 @@
     margin: auto;
 }
 
-.roster {
-    align-items: center;
-    border: 1px solid black;
-    margin: 10px;
-    padding: 10px;
+
+#new-roster-form h4 {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#new-roster-form input[type="text"]{
+    display: block;
+    padding: 8px;
     width: 30%;
+    margin: 20px;
+}
+
+#new-roster-form button {
+    margin-left: 20px;
+}
+
+#new-item-form input[type="text"], input[type="number"]{
+    display: block;
+    padding: 8px;
+    width: 30%;
+    margin: 20px;
+}
+
+#new-item-form h4 {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#new-item-form button {
+    margin-left: 20px;
+}
+
+#back-bttn {
+    margin-bottom: 10px;
 }
 

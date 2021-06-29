@@ -43,14 +43,14 @@ class Item {
             <input type="text" id="image" placeholder="image address">
             <input type="number" id="price" placeholder="price">
             <input type="text" id="url" placeholder="page url">
-            <input type="submit" value="create">
+            <button type="submit" class="btn btn-primary">Create</button>        
         </form>
         `
     }
 
     static backToRoster(){
         Item.itemsContainer.innerHTML += `
-            <div>
+            <div id="back-bttn">
                 <button type="button" class="btn btn-secondary" id="back-bttn">Back To Rosters</button> 
             </div>
         `

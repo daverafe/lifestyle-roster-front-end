@@ -73,7 +73,7 @@ function handleItemBought(){
         event.target.innerText = "Bought"
         event.target.className = "btn btn-success"
     } else if(event.target.innerText === "Bought"){
-        itemService.itemUnbought(event.target.parentElement.parentElement.id)
+        itemService.itemBought(event.target.parentElement.parentElement.id)
         event.target.innerText = "Mark Bought"
         event.target.className = "btn btn-primary"
     }

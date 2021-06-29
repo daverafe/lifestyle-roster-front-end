@@ -67,7 +67,7 @@ class ItemService {
 
     itemBought(id){
         const markBought = {
-            bought: true 
+            bought: event.target.innerText === "Mark Bought" ? true : false 
         }
 
         const patchObj = {
@@ -78,31 +78,11 @@ class ItemService {
             },
             body: JSON.stringify(markBought)
           }
-
           fetch(`${this.endpoint}/items/${id}`, patchObj)
           .then(resp => resp.json())
           .then()
+      
     }
-
-    itemUnbought(id){
-        const markBought = {
-            bought: false 
-        }
-
-        const patchObj = {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(markBought)
-          }
-
-          fetch(`${this.endpoint}/items/${id}`, patchObj)
-          .then(resp => resp.json())
-          .then()
-    }
-   
 
 }
 

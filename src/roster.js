@@ -29,5 +29,13 @@ class Roster {
         `
     }
 
+    static allBoughtItems(){
+        Roster.rostersContainer.innerHTML += `
+            <div class="container">
+                <button type="button" class="btn btn-secondary" id="back-bttn">All Bought Items</button> 
+            </div>
+        `
+    }
+
 
 }

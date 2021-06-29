@@ -5,6 +5,7 @@ const itemService = new ItemService(base_url)
 Roster.rosterForm.addEventListener('submit', handleRosterSubmit)
 Roster.rostersContainer.addEventListener('click', handleRosterDelete)
 Roster.rostersContainer.addEventListener('click', handleItems)
+Roster.rostersContainer.addEventListener('click', handleAllBought)
 
 Item.itemForm.addEventListener('submit', handleItemSubmit)
 Item.itemsContainer.addEventListener('click', handleItemDelete)
@@ -13,6 +14,7 @@ Item.itemsContainer.addEventListener('click', handleBack)
 
 rosterService.getRosters()
 Roster.renderForm()
+Roster.allBoughtItems()
 
 function handleRosterSubmit(){
     if (event.target.id === "new-roster-form"){
@@ -26,6 +28,16 @@ function handleRosterDelete(){
     if(event.target.innerText === "Delete"){
         event.target.parentElement.remove()
         rosterService.deleteRoster(event.target.parentElement.id)
+    }
+}
+
+function handleAllBought() {
+    if(event.target.innerText === "All Bought Items"){
+        this.innerHTML = ""
+        Roster.rosterForm.innerHTML = ""
+        Item.all = []
+        Item.backToRoster()
+        itemService.getItems()
     }
 }
 
@@ -68,12 +80,12 @@ function handleItemBought(){
 }
 
 function handleBack() {
-    // debugger
     if(event.target.innerText === "Back To Rosters"){
         this.innerHTML = ""
         Item.itemForm.innerHTML = ""
         Item.all = []
         rosterService.getRosters()
         Roster.renderForm()
+        Roster.allBoughtItems()
     }
 }

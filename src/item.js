@@ -3,7 +3,8 @@ class Item {
     static itemsContainer = document.getElementById('items-container')
     static itemForm = document.getElementById('form-container')
 
-    constructor({name, image, price, url, bought, roster_id}){
+    constructor({id, name, image, price, url, bought, roster_id}){
+        this.id = id 
         this.name = name 
         this.image = image
         this.price = price

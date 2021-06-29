@@ -10,12 +10,22 @@ class ItemService {
             items.forEach(item => {
                return new Item(item)
             })
-            const filteredItems = Item.all.filter(item => {
-               return item.roster_id === parseInt(rosterId) 
-            }) 
-            filteredItems.forEach(item => {
-                item.appendItemHTML()
-            })       
+            if(rosterId === undefined){
+                const filteredItems = Item.all.filter(item => {
+                    return item.bought === true 
+                 }) 
+                 filteredItems.forEach(item => {
+                     item.appendItemHTML()
+                 }) 
+            } else {
+                const filteredItems = Item.all.filter(item => {
+                    return item.roster_id === parseInt(rosterId) 
+                 }) 
+                 filteredItems.forEach(item => {
+                     item.appendItemHTML()
+                 }) 
+            }
+                 
          })
     }
 

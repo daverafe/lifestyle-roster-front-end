@@ -15,6 +15,7 @@ Item.itemsContainer.addEventListener('click', handleBack)
 rosterService.getRosters()
 Roster.renderForm()
 Roster.allBoughtItems()
+Roster.header()
 
 function handleRosterSubmit(){
     if (event.target.id === "new-roster-form"){
@@ -35,8 +36,10 @@ function handleAllBought() {
     if(event.target.innerText === "All Bought Items"){
         this.innerHTML = ""
         Roster.rosterForm.innerHTML = ""
+        Roster.all = []
         Item.all = []
         Item.backToRoster()
+        Item.allBoughtHeader()
         itemService.getItems()
     }
 }
@@ -48,6 +51,7 @@ function handleItems(){
         let roster = event.target.parentElement.parentElement.id
         Item.renderForm(roster)
         Item.backToRoster()
+        Item.header(roster)
         itemService.getItems(roster)
         
     }
@@ -84,8 +88,10 @@ function handleBack() {
         this.innerHTML = ""
         Item.itemForm.innerHTML = ""
         Item.all = []
+        Roster.all = [] 
         rosterService.getRosters()
         Roster.renderForm()
         Roster.allBoughtItems()
+        Roster.header()
     }
 }

@@ -2,6 +2,10 @@
     margin: auto;
 }
 
+h1 {
+    text-align: center;
+}
+
 
 #new-roster-form h4 {
     margin-top: 10px;

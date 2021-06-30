@@ -41,5 +41,13 @@ class Roster {
         `
     }
 
+    static header(){
+        Roster.rostersContainer.innerHTML += `
+            <div class="container">
+                <h1>Rosters</h1>
+            </div>
+        `
+    }
+
 
 }

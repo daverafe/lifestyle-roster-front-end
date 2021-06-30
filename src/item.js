@@ -56,5 +56,24 @@ class Item {
         `
     }
 
+    static header(rosterId){
+        const roster = Roster.all.filter(r => {
+            return r.id === parseInt(rosterId)
+        })
+        Item.itemsContainer.innerHTML += `
+            <div class="container">
+                <h1>${roster[0].title}</h1>
+            </div>
+        `
+    }
+
+    static allBoughtHeader(){
+        Item.itemsContainer.innerHTML += `
+            <div class="container">
+                <h1>All Bought Items</h1>
+            </div>
+        `
+    }
+
 
 }

@@ -27,8 +27,8 @@ function handleRosterSubmit(){
 
 function handleRosterDelete(){
     if(event.target.innerText === "Delete"){
-        event.target.parentElement.remove()
-        rosterService.deleteRoster(event.target.parentElement.id)
+        event.target.parentElement.parentElement.parentElement.remove()
+        rosterService.deleteRoster(event.target.parentElement.parentElement.id)
     }
 }
 
@@ -66,7 +66,7 @@ function handleItemSubmit() {
 
 function handleItemDelete(){
     if(event.target.innerText === "Remove Item"){
-        event.target.parentElement.parentElement.remove()
+        event.target.parentElement.parentElement.parentElement.remove()
         itemService.deleteItem(event.target.parentElement.parentElement.id)
     }
 }

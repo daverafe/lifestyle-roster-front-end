@@ -2,6 +2,7 @@ const base_url = "http://127.0.0.1:3000"
 const rosterService = new RosterService(base_url)
 const itemService = new ItemService(base_url)
 
+
 Roster.rosterForm.addEventListener('submit', handleRosterSubmit)
 Roster.rostersContainer.addEventListener('click', handleRosterDelete)
 Roster.rostersContainer.addEventListener('click', handleItems)
@@ -50,7 +51,7 @@ function handleItems(){
         Roster.rosterForm.innerHTML = ""
         let roster = event.target.parentElement.parentElement.id
         Item.renderForm(roster)
-        Item.backToRoster()
+        Item.backToRoster()    
         Item.header(roster)
         itemService.getItems(roster)
         

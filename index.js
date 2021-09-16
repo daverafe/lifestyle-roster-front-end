@@ -1,4 +1,4 @@
-const base_url = "http://127.0.0.1:3000"
+const base_url = "https://safe-badlands-86660.herokuapp.com"
 const rosterService = new RosterService(base_url)
 const itemService = new ItemService(base_url)
 

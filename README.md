@@ -1,5 +1,8 @@
 # README
 
+# Link to live site
+https://vigorous-hoover-20c685.netlify.app/
+
 # Lifestyle Roster Front End
 This is the Javascript front end to the Lifestyle Roster App. Here we have all the HTML, CSS, and JS that powers the front end for this project.   
 

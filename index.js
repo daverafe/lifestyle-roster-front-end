@@ -7,15 +7,17 @@ Roster.rosterForm.addEventListener('submit', handleRosterSubmit)
 Roster.rostersContainer.addEventListener('click', handleRosterDelete)
 Roster.rostersContainer.addEventListener('click', handleItems)
 Roster.rostersContainer.addEventListener('click', handleAllBought)
+Roster.rostersContainer.addEventListener('click', handleRosterAdd)
 
 Item.itemForm.addEventListener('submit', handleItemSubmit)
 Item.itemsContainer.addEventListener('click', handleItemDelete)
 Item.itemsContainer.addEventListener('click', handleItemBought)
 Item.itemsContainer.addEventListener('click', handleBack)
+Item.itemsContainer.addEventListener('click', handleItemAdd)
 
 rosterService.getRosters()
-Roster.renderForm()
 Roster.allBoughtItems()
+Roster.welcome()
 Roster.header()
 
 function handleRosterSubmit(){
@@ -45,12 +47,19 @@ function handleAllBought() {
     }
 }
 
+function handleRosterAdd() {
+    if(event.target.tagName === 'IMG' && Roster.rosterForm.innerText === ""){
+        Roster.renderForm()
+    } else {
+        Roster.rosterForm.innerHTML = ""
+    }
+}
+
 function handleItems(){
     if(event.target.id === "roster-title"){
         this.innerHTML = ""
         Roster.rosterForm.innerHTML = ""
         let roster = event.target.parentElement.parentElement.id
-        Item.renderForm(roster)
         Item.backToRoster()    
         Item.header(roster)
         itemService.getItems(roster)
@@ -84,6 +93,15 @@ function handleItemBought(){
     }
 }
 
+function handleItemAdd() {
+    if(event.target.tagName === 'IMG' && Item.itemForm.innerText === ""){
+        let rosterId = event.target.parentElement.dataset.id
+        Item.renderForm(rosterId)
+    } else {
+        Item.itemForm.innerHTML = ""
+    }
+}
+
 function handleBack() {
     if(event.target.innerText === "Back To Rosters"){
         this.innerHTML = ""
@@ -91,8 +109,8 @@ function handleBack() {
         Item.all = []
         Roster.all = [] 
         rosterService.getRosters()
-        Roster.renderForm()
         Roster.allBoughtItems()
+        Roster.welcome()
         Roster.header()
     }
 }

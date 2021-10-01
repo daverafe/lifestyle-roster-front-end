@@ -6,6 +6,16 @@ h1 {
     text-align: center;
 }
 
+#roster-header {
+    text-align: center;
+    margin: auto;
+}
+
+#item-header {
+    text-align: center;
+    margin: auto;
+}
+
 
 #new-roster-form h4 {
     margin-top: 10px;
@@ -41,5 +51,9 @@ h1 {
 
 #back-bttn {
     margin-bottom: 10px;
+}
+
+#welcome {
+    border: 2px solid black;
 }
 

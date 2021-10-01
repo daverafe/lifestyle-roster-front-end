@@ -61,8 +61,9 @@ class Item {
             return r.id === parseInt(rosterId)
         })
         Item.itemsContainer.innerHTML += `
-            <div class="container">
+            <div id="item-header" data-id=${rosterId} class="container">
                 <h1>${roster[0].title}</h1>
+                <img src="https://pics.freeicons.io/uploads/icons/png/3642717691543238914-64.png">
             </div>
         `
     }

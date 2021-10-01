@@ -11,9 +11,19 @@ h1 {
     margin: auto;
 }
 
+#roster-header img {
+    width: 100px;
+    height: 100px;
+}
+
 #item-header {
     text-align: center;
     margin: auto;
+}
+
+#item-header img {
+    width: 100px;
+    height: 100px;
 }
 
 

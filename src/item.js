@@ -63,7 +63,7 @@ class Item {
         Item.itemsContainer.innerHTML += `
             <div id="item-header" data-id=${rosterId} class="container">
                 <h1>${roster[0].title}</h1>
-                <img src="https://pics.freeicons.io/uploads/icons/png/3642717691543238914-64.png">
+                <img src="https://static.thenounproject.com/png/1830599-200.png">
             </div>
         `
     }

@@ -56,7 +56,7 @@ class Roster {
         Roster.rostersContainer.innerHTML += `
             <div id="roster-header" class="container">
                 <h1>Rosters</h1>
-                <img src="https://pics.freeicons.io/uploads/icons/png/3642717691543238914-64.png">
+                <img src="https://static.thenounproject.com/png/1830599-200.png">
             </div>
         `
     }

@@ -67,3 +67,29 @@ h1 {
     border: 2px solid black;
 }
 
+@media (max-width: 500px){
+    #new-roster-form input[type="text"]{
+        display: block;
+        padding: 8px;
+        width: 50%;
+        margin: 20px;
+    }
+    #new-roster-form input[type="text"]{
+        display: block;
+        padding: 8px;
+        width: 50%;
+        margin: 20px;
+    }
+    #new-item-form input[type="text"], input[type="number"]{
+        display: block;
+        padding: 8px;
+        width: 50%;
+        margin: 20px;
+    }
+    .card {
+        margin: auto;
+        width: 60%;
+        text-align: center;
+    }
+}
+
